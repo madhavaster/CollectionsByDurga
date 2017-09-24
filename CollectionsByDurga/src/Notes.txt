@@ -1,0 +1,105 @@
+If we want to represent a group of individual objects as a single entity, we should go for collections.
+9 key interfaces of Collection framework
+========================================
+1.Collection
+2.List
+3.Set , SortedSet , NavigableSet
+6.Map , SortedMap , NavigableMap
+9.Queue
+========================================
+Collection (I)
+--------------
+--> Root interface of collection framework.
+--> There is no concrete class which implements Collection interface directly.
+-->
+Difference b/w Collection and Collections ?
+===========================================
+Collection is an interface for Collection framework. 
+Collections is a class which provides several utility methods for collection objects.
+==========================================
+List (I)
+--------
+if we want to create a group of individual objects as a single entity where duplicates are allowed and insertion order must be preserved then we should go for List.
+
+			Collection(I) (1.2V)
+				  |
+				  |
+			    List(I) (1.2v)
+			      |
+	-------------------------------
+	|			   | 			   |
+	|			   |			   |
+ArrayList(C)   LinkedList(C)	Vector(C)(1.0v)
+	(1.2v)		  (1.2v)		   |
+								   |
+								Stack(C)(1.0v)
+==========================================================
+Set(I)
+-----
+Its a child interface of Collection. If we want to represent a group of individual objects as a single entity where duplicates are not allowed and insertion order not required
+then we should go for Set interface.
+Implementation classes for Set(I) are 
+	
+			Collection(I)(1.2v)
+				|
+				|
+			  Set(I)(1.2v)
+			    |
+			 HashSet(C)(1.2v)
+			 	|
+		  LinkedHashSet(C)(1.4v)
+==========================================================
+SortedSet(I)
+------------
+Its a child interface of Set. If we want to represent a group of individual objects as a single entity where duplicates are not allowed and all objects should be inserted
+according to some sorting order then we should go for SortedSet.
+NavigableSet(I)
+---------------
+Its a child interface of SortedSet. It contains several methods for navigation purpose.
+
+			Collection(I)(1.2v)
+				|
+			Set(I)(1.2v)
+				|
+			SortedSet(I)(1.2v)
+				|
+			NavigableSet(I)(1.6v)
+				|
+			TreeSet(C)(1.2v)
+=============================================================
+Queue(I)
+--------
+its the child interface of Collection (I). If we want to represent a group of individual objects prior to processing then we should go for Queue.
+Usually queue follows FIFO order but based on our requirement we can implement our own priority order also.
+
+			Collection(I)
+				|
+			Queue(I)
+				|
+		-------	|--------------
+		|					  |	
+	PriorityQueue		BlockingQueue(C)
+							  |-- PriorityBlockingQueue(C)
+							  |-- LinkedBlockingQueue(C)
+
+All the above interfaces (Collection, List, Set, SortedSet, NavigableSet and  Queue) meant for representing a group of individual objects. If we want to represent group of objects
+as key value pairs, then we should go for Map(I).
+===============================================================
+Map(I)
+======
+Map is not child interface of Collection(I). If we want to represent group of objects as key value pairs then we should go for map.
+
+key		 value 				  
+-----------------
+S.No	| name	|
+-----------------
+101		| durga	|
+-----------------
+102		| shiva	|
+-----------------
+103		| ravi	|
+----------------- 
+Collection Framework diagram
+============================
+
+
